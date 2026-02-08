@@ -6,8 +6,10 @@ class HistoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Text('History')
+        Center(child: Text('No QR Code Generated!',style: TextStyle(fontSize: 26,fontFamily: 'Itim',color: AppColors.whiteGrayColor),))
       ],
     );
   }

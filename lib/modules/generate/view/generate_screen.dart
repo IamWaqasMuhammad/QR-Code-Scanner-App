@@ -6,16 +6,49 @@ import '../../../core/common_widgets/custom_button/custom_button.dart';
 class GenerateScreen extends StatelessWidget {
   GenerateScreen({super.key});
 
-  final List<Map<String, String>> platforms = [
-    {"label": "Text", "icon": AppIcons.textIcon},
-    {"label": "Website", "icon": AppIcons.websiteIcon},
-    {"label": "Contact", "icon": AppIcons.contactIcon},
-    {"label": "WhatsApp", "icon": AppIcons.whatsappIcon},
-    {"label": "Twitter", "icon": AppIcons.twitterIcon},
-    {"label": "Instagram", "icon": AppIcons.instagramIcon},
-    {"label": "WiFi", "icon": AppIcons.wifiIcon},
-    {"label": "Email", "icon": AppIcons.emailIcon},
+  final List<Map<String, dynamic>> platforms = [
+    {
+      "label": "Text",
+      "icon": AppIcons.textIcon,
+      "route": AppRoutes.generateText
+    },
+    {
+      "label": "Website",
+      "icon": AppIcons.websiteIcon,
+      "route": AppRoutes.generateWebsite
+    },
+    {
+      "label": "Contact",
+      "icon": AppIcons.contactIcon,
+      "route": AppRoutes.generateContact
+    },
+    {
+      "label": "WhatsApp",
+      "icon": AppIcons.whatsappIcon,
+      "route": AppRoutes.generateWhatsApp
+    },
+    {
+      "label": "Twitter",
+      "icon": AppIcons.twitterIcon,
+      "route": AppRoutes.generateTwitter
+    },
+    {
+      "label": "Instagram",
+      "icon": AppIcons.instagramIcon,
+      "route": AppRoutes.generateInstagram
+    },
+    {
+      "label": "WiFi",
+      "icon": AppIcons.wifiIcon,
+      "route": AppRoutes.generateWifi
+    },
+    {
+      "label": "Email",
+      "icon": AppIcons.emailIcon,
+      "route": AppRoutes.generateEmail
+    },
   ];
+
 
   @override
   Widget build(BuildContext context) {
@@ -89,7 +122,7 @@ class GenerateScreen extends StatelessWidget {
                       color: Colors.black,
                       onTap: () {
                         // Handle button tap
-                        print("Selected ${platform['label']}");
+                        Get.toNamed(platform['route'] as String);
                       },
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,

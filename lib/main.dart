@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
           title: 'QR Code Scanner',
           debugShowCheckedModeBanner: false,
           initialRoute: AppRoutes.home,
-          getPages: AppPages().pages,
+          getPages: AppPages.pages,
           builder: (context, widget) {
             return widget!;
           },
