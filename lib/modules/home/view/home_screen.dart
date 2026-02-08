@@ -1,5 +1,7 @@
 
 
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../../app_barrels.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -18,8 +20,8 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: Container(
-      height: 68,
-      width: 68,
+      height: 68.h,
+      width: 68.w,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         boxShadow: [
@@ -35,16 +37,15 @@ class HomeScreen extends StatelessWidget {
         shape: const CircleBorder(),
         tooltip: 'Scan QR Code',
         onPressed: () => Get.to(const ScanScreen()),
-        child: Image.asset(AppIcons.scanIcon,height: 40,width: 40,)
+        child: Image.asset(AppIcons.scanIcon,height: 40.h,width: 40.w,)
       ),
     ),
 
     floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
-        height: 90,
+        height: 90.h,
 
         shape: const CircularNotchedRectangle(),
-        notchMargin: 10,
         color: Colors.transparent,
         child: CustomNavbar(),
       ),

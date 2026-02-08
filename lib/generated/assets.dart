@@ -8,11 +8,10 @@ class Assets {
   static const String iconsGenerateIcon = 'assets/icons/generate_icon.png';
   static const String iconsHistoryIcon = 'assets/icons/history_icon.png';
   static const String iconsInstagramIcon = 'assets/icons/instagram_icon.png';
-  static const String iconsMenuIcon = 'assets/icons/menu_icon.png';
   static const String iconsScanIcon = 'assets/icons/scan_icon.png';
   static const String iconsTextIcon = 'assets/icons/text_icon.png';
   static const String iconsTwitterIcon = 'assets/icons/twitter_icon.png';
-  static const String iconsWebisteIcon = 'assets/icons/webiste_icon.png';
+  static const String iconsWebsiteIcon = 'assets/icons/website_icon.png';
   static const String iconsWhatsappIcon = 'assets/icons/whatsapp_icon.png';
   static const String iconsWifiIcon = 'assets/icons/wifi_icon.png';
 

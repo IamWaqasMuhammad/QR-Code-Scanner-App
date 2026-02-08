@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:qr_code_scanner/routes/app_pages.dart';
 import 'package:qr_code_scanner/routes/app_routes.dart';
 
@@ -10,14 +11,23 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      title: 'QR Code Scanner',
-      initialRoute: AppRoutes.home,
-      getPages: AppPages().pages,
+    return ScreenUtilInit(
+      designSize: const Size(428, 926),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, child) {
+        return GetMaterialApp(
+          title: 'QR Code Scanner',
+          debugShowCheckedModeBanner: false,
+          initialRoute: AppRoutes.home,
+          getPages: AppPages().pages,
+          builder: (context, widget) {
+            return widget!;
+          },
+        );
+      },
     );
   }
 }
-
