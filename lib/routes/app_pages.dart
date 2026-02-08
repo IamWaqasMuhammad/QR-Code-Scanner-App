@@ -5,6 +5,8 @@ import 'package:qr_code_scanner/modules/generate/view/generate_screen.dart';
 import 'package:qr_code_scanner/modules/home/binding/home_binding.dart';
 import 'package:qr_code_scanner/modules/home/view/home_screen.dart';
 import 'package:qr_code_scanner/modules/scan/binding/scan_binding.dart';
+import 'package:qr_code_scanner/modules/settings/binding/settings_binding.dart';
+import 'package:qr_code_scanner/modules/settings/view/settings_screen.dart';
 import 'package:qr_code_scanner/routes/app_routes.dart';
 
 class AppPages {
@@ -23,6 +25,11 @@ class AppPages {
       name: AppRoutes.generate,
       page: () => GenerateScreen(),
       binding: GenerateBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.settings,
+      page: () => SettingsScreen(),
+      binding: SettingsBinding(),
     ),
   ];
 }

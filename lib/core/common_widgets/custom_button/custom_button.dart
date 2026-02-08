@@ -4,7 +4,7 @@ class CustomButton extends StatelessWidget {
   final double? height, width;
   final Color? color;
   final BoxShape boxShape;
-  final double borderRadius;
+  final BorderRadiusGeometry? borderRadius;
   final List<BoxShadow>? boxShadow;
   final Widget child;
   final void Function()? onTap;
@@ -16,7 +16,7 @@ class CustomButton extends StatelessWidget {
     this.width,
     this.color,
     this.boxShape = BoxShape.rectangle,
-    this.borderRadius = 8,
+    this.borderRadius,
     this.boxShadow,
     required this.child,
     required this.onTap,
@@ -26,22 +26,22 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: color,
+    return Ink(
+      decoration: BoxDecoration(
+        color: color,
+        shape: boxShape,
+        borderRadius: borderRadius,
+        boxShadow: boxShadow,
+      ),
       child: InkWell(
         onTap: onTap,
-        splashColor: splashColor ?? AppColors.primaryColor.withOpacity(0.2),
-        highlightColor:
-            highlightedColor ?? AppColors.primaryColor.withOpacity(0.2),
+        splashColor: splashColor ?? AppColors.primaryColor.withOpacity(0.3),
+        highlightColor: highlightedColor ?? AppColors.primaryColor.withOpacity(0.3),
+        borderRadius: borderRadius as BorderRadius?,
         child: Container(
           height: height,
           width: width,
-          decoration: BoxDecoration(
-            shape: boxShape,
-            borderRadius: BorderRadius.circular(borderRadius),
-            boxShadow: boxShadow,
-          ),
-          child: child,
+          child: Center(child: child),
         ),
       ),
     );

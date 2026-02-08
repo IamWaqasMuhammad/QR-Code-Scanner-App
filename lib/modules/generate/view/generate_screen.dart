@@ -1,9 +1,10 @@
+import 'package:qr_code_scanner/routes/app_routes.dart';
 
 import '../../../app_barrels.dart';
 import '../../../core/common_widgets/custom_button/custom_button.dart';
 
 class GenerateScreen extends StatelessWidget {
-   GenerateScreen({super.key});
+  GenerateScreen({super.key});
 
   final List<Map<String, String>> platforms = [
     {"label": "Text", "icon": AppIcons.textIcon},
@@ -16,7 +17,6 @@ class GenerateScreen extends StatelessWidget {
     {"label": "Email", "icon": AppIcons.emailIcon},
   ];
 
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -27,40 +27,69 @@ class GenerateScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: 20.h),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Generate QR Code',
+                  style: TextStyle(
+                    color: AppColors.whiteGrayColor,
+                    fontFamily: 'Itim',
+                    fontSize: 26.sp,
+                  ),
+                ),
+                SizedBox(
+                  height: 40.h,
+                  width: 40.w,
+                  child: CustomButton(
+                    color: AppColors.blackColor,
+                    borderRadius: BorderRadius.circular(12.r),
+                    boxShadow: [
+                      BoxShadow(
+                        color: AppColors.blackColor.withOpacity(0.5), // Add opacity
+                        blurRadius: 12,
+                      ),
+                    ],
+                    onTap: () => Get.toNamed(AppRoutes.settings),
+                    child: Icon(
+                      Icons.settings_outlined,
+                      color: AppColors.primaryColor,
+                      size: 20.sp, // Add explicit size
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 2.h),
             Text(
-              'Generate QR Code',
+              'You can generate QR Code for below platforms!',
               style: TextStyle(
-                color: AppColors.whiteGrayColor,
                 fontFamily: 'Itim',
-                fontSize: 26.sp,
+                fontSize: 18.sp,
+                color: AppColors.whiteGrayColor.withOpacity(0.4),
               ),
             ),
-            SizedBox(height: 2.h,),
-            Text('You can generate QR Code for below platforms!',style: TextStyle(
-              fontFamily: 'Itim',
-              fontSize: 18.sp,
-              color: AppColors.whiteGrayColor.withOpacity(0.4)
-            ),),
-            SizedBox(height: 20.h,),
+            SizedBox(height: 20.h),
             Expanded(
               child: GridView.builder(
                 shrinkWrap: false,
                 itemCount: platforms.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,        // 2 items per row
+                  crossAxisCount: 2,
                   crossAxisSpacing: 12.w,
                   mainAxisSpacing: 12.h,
-                  childAspectRatio: 1.3,    // tweak for height/width ratio
+                  childAspectRatio: 1.3,
                 ),
                 itemBuilder: (context, index) {
                   final platform = platforms[index];
                   return ClipRRect(
-                    borderRadius: BorderRadiusGeometry.circular(18),
+                    borderRadius: BorderRadius.circular(18),
                     child: CustomButton(
+                      borderRadius: BorderRadius.circular(18),
                       color: Colors.black,
                       onTap: () {
                         // Handle button tap
-                        ("Selected ${platform['label']}");
+                        print("Selected ${platform['label']}");
                       },
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -85,7 +114,7 @@ class GenerateScreen extends StatelessWidget {
                   );
                 },
               ),
-            )
+            ),
           ],
         ),
       ),
