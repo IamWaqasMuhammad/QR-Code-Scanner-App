@@ -41,48 +41,50 @@ class GenerateScreen extends StatelessWidget {
               fontSize: 18.sp,
               color: AppColors.whiteGrayColor.withOpacity(0.4)
             ),),
-            SizedBox(height: 10.h,),
-            GridView.builder(
-              shrinkWrap: true,
-              itemCount: platforms.length,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,        // 2 items per row
-                crossAxisSpacing: 12.w,
-                mainAxisSpacing: 12.h,
-                childAspectRatio: 1.2,    // tweak for height/width ratio
-              ),
-              itemBuilder: (context, index) {
-                final platform = platforms[index];
-                return ClipRRect(
-                  borderRadius: BorderRadiusGeometry.circular(18),
-                  child: CustomButton(
-                    color: Colors.black,
-                    onTap: () {
-                      // Handle button tap
-                      ("Selected ${platform['label']}");
-                    },
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          platform['icon']!,
-                          height: 40.h,
-                          width: 40.w,
-                        ),
-                        SizedBox(height: 8.h),
-                        Text(
-                          platform['label']!,
-                          style: TextStyle(
-                            color: AppColors.whiteGrayColor,
-                            fontFamily: 'Itim',
-                            fontSize: 16.sp,
+            SizedBox(height: 20.h,),
+            Expanded(
+              child: GridView.builder(
+                shrinkWrap: false,
+                itemCount: platforms.length,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,        // 2 items per row
+                  crossAxisSpacing: 12.w,
+                  mainAxisSpacing: 12.h,
+                  childAspectRatio: 1.3,    // tweak for height/width ratio
+                ),
+                itemBuilder: (context, index) {
+                  final platform = platforms[index];
+                  return ClipRRect(
+                    borderRadius: BorderRadiusGeometry.circular(18),
+                    child: CustomButton(
+                      color: Colors.black,
+                      onTap: () {
+                        // Handle button tap
+                        ("Selected ${platform['label']}");
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            platform['icon']!,
+                            height: 40.h,
+                            width: 40.w,
                           ),
-                        ),
-                      ],
+                          SizedBox(height: 8.h),
+                          Text(
+                            platform['label']!,
+                            style: TextStyle(
+                              color: AppColors.whiteGrayColor,
+                              fontFamily: 'Itim',
+                              fontSize: 16.sp,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                );
-              },
+                  );
+                },
+              ),
             )
           ],
         ),
