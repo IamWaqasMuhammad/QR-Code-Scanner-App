@@ -1,8 +1,9 @@
 
+
 import '../../../app_barrels.dart';
 
-class TextQRGeneratorScreen extends StatelessWidget {
-  const TextQRGeneratorScreen({super.key});
+class ContactQRGeneratorScreen extends StatelessWidget {
+  const ContactQRGeneratorScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +11,7 @@ class TextQRGeneratorScreen extends StatelessWidget {
       backgroundColor: AppColors.bgColor,
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 12.w,vertical: 12.h),
+          padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 12.h),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -25,7 +26,6 @@ class TextQRGeneratorScreen extends StatelessWidget {
                   boxShadow: [
                     BoxShadow(
                       color: AppColors.blackColor.withOpacity(0.5),
-                      // Add opacity
                       blurRadius: 12,
                     ),
                   ],
@@ -40,8 +40,8 @@ class TextQRGeneratorScreen extends StatelessWidget {
               SizedBox(height: 80.h),
               Center(
                 child: Container(
-                  height: 335.h,
-                  width: 335.h,
+                  height: 450.h,
+                  width: 350.h,
                   decoration: BoxDecoration(
                     color: AppColors.blackColor.withOpacity(0.3),
                     borderRadius: BorderRadius.circular(12.r),
@@ -58,14 +58,14 @@ class TextQRGeneratorScreen extends StatelessWidget {
                         SizedBox(height: 20.h),
                         Center(
                           child: Image.asset(
-                            AppIcons.textIcon,
+                            AppIcons.contactIcon,
                             height: 50.h,
                             width: 50.w,
                           ),
                         ),
                         SizedBox(height: 20.h),
                         Text(
-                          AppStrings.text,
+                          AppStrings.nameText,
                           style: TextStyle(
                             fontSize: 16.sp,
                             fontFamily: 'Itim',
@@ -74,6 +74,20 @@ class TextQRGeneratorScreen extends StatelessWidget {
                         ),
                         SizedBox(height: 8.h),
                         CustomTextField(hintText: AppStrings.enterTextHint),
+                        SizedBox(height: 10.h),
+                        Text(
+                          AppStrings.contactNumber,
+                          style: TextStyle(
+                            fontSize: 16.sp,
+                            fontFamily: 'Itim',
+                            color: AppColors.whiteGrayColor,
+                          ),
+                        ),
+                        SizedBox(height: 8.h),
+                        CustomTextField(
+                          hintText: AppStrings.enterNumberHintText,
+                          keyboardType: TextInputType.number,
+                        ),
                         SizedBox(height: 50.h),
                         Center(
                           child: CustomButton(
@@ -82,12 +96,14 @@ class TextQRGeneratorScreen extends StatelessWidget {
                             color: AppColors.primaryColor,
                             borderRadius: BorderRadius.circular(12),
                             onTap: () {},
-                            child: Text(AppStrings.generateQR,style: TextStyle(
-                              fontFamily: 'Itim',
-                              fontSize: 16,
-                              color: AppColors.bgColor
-                            ),),
-
+                            child: Text(
+                              AppStrings.generateQR,
+                              style: TextStyle(
+                                fontFamily: 'Itim',
+                                fontSize: 16,
+                                color: AppColors.bgColor,
+                              ),
+                            ),
                           ),
                         ),
                       ],

@@ -1,49 +1,47 @@
-import 'package:qr_code_scanner/routes/app_routes.dart';
 
 import '../../../app_barrels.dart';
-import '../../../core/common_widgets/custom_button/custom_button.dart';
 
 class GenerateScreen extends StatelessWidget {
   GenerateScreen({super.key});
 
   final List<Map<String, dynamic>> platforms = [
     {
-      "label": "Text",
+      "label": AppStrings.text,
       "icon": AppIcons.textIcon,
       "route": AppRoutes.generateText
     },
     {
-      "label": "Website",
+      "label": AppStrings.websiteText,
       "icon": AppIcons.websiteIcon,
       "route": AppRoutes.generateWebsite
     },
     {
-      "label": "Contact",
+      "label": AppStrings.contactText,
       "icon": AppIcons.contactIcon,
       "route": AppRoutes.generateContact
     },
     {
-      "label": "WhatsApp",
+      "label": AppStrings.whatsappText,
       "icon": AppIcons.whatsappIcon,
       "route": AppRoutes.generateWhatsApp
     },
     {
-      "label": "Twitter",
+      "label": AppStrings.twitterText,
       "icon": AppIcons.twitterIcon,
       "route": AppRoutes.generateTwitter
     },
     {
-      "label": "Instagram",
+      "label": AppStrings.instagramText,
       "icon": AppIcons.instagramIcon,
       "route": AppRoutes.generateInstagram
     },
     {
-      "label": "WiFi",
+      "label": AppStrings.wifiText,
       "icon": AppIcons.wifiIcon,
       "route": AppRoutes.generateWifi
     },
     {
-      "label": "Email",
+      "label": AppStrings.emailText,
       "icon": AppIcons.emailIcon,
       "route": AppRoutes.generateEmail
     },
@@ -64,7 +62,7 @@ class GenerateScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Generate QR Code',
+                  AppStrings.generateQR,
                   style: TextStyle(
                     color: AppColors.whiteGrayColor,
                     fontFamily: 'Itim',
@@ -79,7 +77,7 @@ class GenerateScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12.r),
                     boxShadow: [
                       BoxShadow(
-                        color: AppColors.blackColor.withOpacity(0.5), // Add opacity
+                        color: AppColors.blackColor.withOpacity(0.5),
                         blurRadius: 12,
                       ),
                     ],
@@ -87,7 +85,7 @@ class GenerateScreen extends StatelessWidget {
                     child: Icon(
                       Icons.settings_outlined,
                       color: AppColors.primaryColor,
-                      size: 20.sp, // Add explicit size
+                      size: 20.sp,
                     ),
                   ),
                 ),
@@ -95,7 +93,7 @@ class GenerateScreen extends StatelessWidget {
             ),
             SizedBox(height: 2.h),
             Text(
-              'You can generate QR Code for below platforms!',
+              AppStrings.generateQRSubTitle,
               style: TextStyle(
                 fontFamily: 'Itim',
                 fontSize: 18.sp,
@@ -121,7 +119,6 @@ class GenerateScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(18),
                       color: Colors.black,
                       onTap: () {
-                        // Handle button tap
                         Get.toNamed(platform['route'] as String);
                       },
                       child: Column(

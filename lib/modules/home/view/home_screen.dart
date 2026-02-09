@@ -1,7 +1,4 @@
 
-
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../app_barrels.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -35,7 +32,7 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: AppColors.primaryColor.withOpacity(0.2),
         elevation: 0,
         shape: const CircleBorder(),
-        tooltip: 'Scan QR Code',
+        tooltip: AppStrings.scanToolTip,
         onPressed: () => Get.to(const ScanScreen()),
         child: Image.asset(AppIcons.scanIcon,height: 40.h,width: 40.w,)
       ),

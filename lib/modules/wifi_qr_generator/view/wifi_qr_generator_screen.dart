@@ -1,8 +1,8 @@
 
 import '../../../app_barrels.dart';
 
-class TextQRGeneratorScreen extends StatelessWidget {
-  const TextQRGeneratorScreen({super.key});
+class WifiQRGeneratorScreen extends StatelessWidget {
+  const WifiQRGeneratorScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,8 +40,8 @@ class TextQRGeneratorScreen extends StatelessWidget {
               SizedBox(height: 80.h),
               Center(
                 child: Container(
-                  height: 335.h,
-                  width: 335.h,
+                  height: 450.h,
+                  width: 350.h,
                   decoration: BoxDecoration(
                     color: AppColors.blackColor.withOpacity(0.3),
                     borderRadius: BorderRadius.circular(12.r),
@@ -58,14 +58,14 @@ class TextQRGeneratorScreen extends StatelessWidget {
                         SizedBox(height: 20.h),
                         Center(
                           child: Image.asset(
-                            AppIcons.textIcon,
+                            AppIcons.wifiIcon,
                             height: 50.h,
                             width: 50.w,
                           ),
                         ),
                         SizedBox(height: 20.h),
                         Text(
-                          AppStrings.text,
+                          AppStrings.networkText,
                           style: TextStyle(
                             fontSize: 16.sp,
                             fontFamily: 'Itim',
@@ -73,7 +73,18 @@ class TextQRGeneratorScreen extends StatelessWidget {
                           ),
                         ),
                         SizedBox(height: 8.h),
-                        CustomTextField(hintText: AppStrings.enterTextHint),
+                        CustomTextField(hintText: AppStrings.networkHintText),
+                        SizedBox(height: 8.h,),
+                        Text(
+                          AppStrings.passwordText,
+                          style: TextStyle(
+                            fontSize: 16.sp,
+                            fontFamily: 'Itim',
+                            color: AppColors.whiteGrayColor,
+                          ),
+                        ),
+                        SizedBox(height: 8.h),
+                        CustomTextField(hintText: AppStrings.enterPassword),
                         SizedBox(height: 50.h),
                         Center(
                           child: CustomButton(

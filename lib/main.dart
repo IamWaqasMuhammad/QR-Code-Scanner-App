@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:qr_code_scanner/core/constants/app_strings/app_strings.dart';
 import 'package:qr_code_scanner/routes/app_pages.dart';
 import 'package:qr_code_scanner/routes/app_routes.dart';
 
@@ -14,12 +15,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(428, 926),
+      designSize: const Size(428, 926), /// My Figma Design Size
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
         return GetMaterialApp(
-          title: 'QR Code Scanner',
+          title: AppStrings.appName,
           debugShowCheckedModeBanner: false,
           initialRoute: AppRoutes.home,
           getPages: AppPages.pages,

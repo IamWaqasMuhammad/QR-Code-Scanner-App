@@ -1,3 +1,4 @@
-import 'package:get/get.dart';
+
+import '../../../app_barrels.dart';
 
 class TextQRGeneratorController extends GetxController{}

@@ -1,5 +1,3 @@
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:qr_code_scanner/core/common_widgets/custom_navbar/navbar_item.dart';
 
 import '../../../app_barrels.dart';
 

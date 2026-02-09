@@ -1,8 +1,4 @@
 
-
-import 'package:qr_code_scanner/modules/generate/view/generate_screen.dart';
-import 'package:qr_code_scanner/modules/history/view/history_screen.dart';
-
 import '../../../app_barrels.dart';
 
 class HomeController extends GetxController{
@@ -29,8 +25,8 @@ class HomeController extends GetxController{
 
   /// NavBar Icons Labels
   List<String> labels =[
-    'Generate',
-    'History'
+    AppStrings.generateText,
+    AppStrings.historyText
   ];
 
 }

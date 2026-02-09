@@ -1,8 +1,8 @@
 
 import '../../../app_barrels.dart';
 
-class TextQRGeneratorScreen extends StatelessWidget {
-  const TextQRGeneratorScreen({super.key});
+class TwitterQRGeneratorScreen extends StatelessWidget {
+  const TwitterQRGeneratorScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -58,14 +58,14 @@ class TextQRGeneratorScreen extends StatelessWidget {
                         SizedBox(height: 20.h),
                         Center(
                           child: Image.asset(
-                            AppIcons.textIcon,
+                            AppIcons.twitterIcon,
                             height: 50.h,
                             width: 50.w,
                           ),
                         ),
                         SizedBox(height: 20.h),
                         Text(
-                          AppStrings.text,
+                          AppStrings.usernameText,
                           style: TextStyle(
                             fontSize: 16.sp,
                             fontFamily: 'Itim',
@@ -73,7 +73,7 @@ class TextQRGeneratorScreen extends StatelessWidget {
                           ),
                         ),
                         SizedBox(height: 8.h),
-                        CustomTextField(hintText: AppStrings.enterTextHint),
+                        CustomTextField(hintText: AppStrings.twitterUsername),
                         SizedBox(height: 50.h),
                         Center(
                           child: CustomButton(

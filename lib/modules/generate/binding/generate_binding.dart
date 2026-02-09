@@ -1,5 +1,5 @@
-import 'package:get/get.dart';
-import 'package:qr_code_scanner/modules/generate/controller/generate_controller.dart';
+
+import '../../../app_barrels.dart';
 
 class GenerateBinding extends Bindings{
   @override

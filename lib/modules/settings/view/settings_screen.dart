@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/app_barrels.dart';
-import 'package:qr_code_scanner/core/common_widgets/custom_button/custom_button.dart';
-import 'package:qr_code_scanner/modules/settings/controller/settings_controller.dart';
-import 'package:qr_code_scanner/modules/settings/widgets/settings_tiles.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -43,7 +39,7 @@ class SettingsScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 50.h),
                 Text(
-                  'Settings',
+                  AppStrings.settingsText,
                   style: TextStyle(
                     color: AppColors.primaryColor,
                     fontFamily: 'Itim',
@@ -52,16 +48,16 @@ class SettingsScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 15.h,),
                 Obx(()=>SettingsTile(
-                  title: 'Push Notification',
-                  subtitle: 'Enable/Disable push notification',
+                  title: AppStrings.pushNotificationText,
+                  subtitle: AppStrings.pushNotificationSubtitle,
                   icon: Icons.notifications_outlined,
                   isToggle: true,
                   toggleValue: controller.isPushEnable.value,
                   onToggleChanged: controller.isPushEnabled,
                 ),),
                 Obx(()=>SettingsTile(
-                  title: 'Vibrate',
-                  subtitle: 'vibrate when scan is done',
+                  title: AppStrings.vibrateText,
+                  subtitle: AppStrings.vibrateSubTitle,
                   icon: Icons.vibration_outlined,
                   isToggle: true,
                   toggleValue: controller.isVibrate.value,
@@ -69,8 +65,8 @@ class SettingsScreen extends StatelessWidget {
                 ),),
                 SizedBox(height: 5.h,),
                 Obx(()=>SettingsTile(
-                  title: 'Beep',
-                  subtitle: 'Beep when scan is done',
+                  title: AppStrings.beepText,
+                  subtitle: AppStrings.beepSubTitle,
                   icon: Icons.volume_up_outlined,
                   isToggle: true,
                   toggleValue: controller.isBeep.value,
@@ -78,7 +74,7 @@ class SettingsScreen extends StatelessWidget {
                 ),),
                 SizedBox(height: 30.h),
                 Text(
-                  'Support',
+                  AppStrings.supportText,
                   style: TextStyle(
                     color: AppColors.primaryColor,
                     fontFamily: 'Itim',
@@ -87,24 +83,24 @@ class SettingsScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 15.h,),
                 SettingsTile(
-                  title: 'Rate Us',
-                  subtitle: 'Your best reward to us.',
+                  title: AppStrings.rateUsText,
+                  subtitle: AppStrings.rateUsSubtitle,
                   icon: Icons.star_border_outlined,
                 ),
                 SizedBox(height: 5.h,),
                 SettingsTile(
-                  title: 'Share',
-                  subtitle: 'Share with others',
+                  title: AppStrings.shareText,
+                  subtitle: AppStrings.shareSubTitle,
                   icon: Icons.share,
                 ),
                 SettingsTile(
-                  title: 'Privacy Policy',
-                  subtitle: 'Follow our policies that benefits you.',
+                  title: AppStrings.privacyPolicyText,
+                  subtitle: AppStrings.privacyPolicySubTitle,
                   icon: Icons.privacy_tip_outlined,
                 ),
                 SizedBox(height: 30.h),
                 Text(
-                  'About',
+                  AppStrings.aboutText,
                   style: TextStyle(
                     color: AppColors.primaryColor,
                     fontFamily: 'Itim',
@@ -113,8 +109,8 @@ class SettingsScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 15.h,),
                 SettingsTile(
-                  title: 'Version',
-                  subtitle: '1.0.0',
+                  title: AppStrings.versionText,
+                  subtitle: AppStrings.versionNumber,
                   icon: Icons.info_outline,
                 ),
               ],

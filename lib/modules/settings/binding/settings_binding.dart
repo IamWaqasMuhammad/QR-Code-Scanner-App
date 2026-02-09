@@ -1,5 +1,5 @@
-import 'package:get/get.dart';
-import 'package:qr_code_scanner/modules/settings/controller/settings_controller.dart';
+
+import '../../../app_barrels.dart';
 
 class SettingsBinding extends Bindings{
   @override

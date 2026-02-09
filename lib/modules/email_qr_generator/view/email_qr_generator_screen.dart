@@ -1,8 +1,7 @@
-
 import '../../../app_barrels.dart';
 
-class TextQRGeneratorScreen extends StatelessWidget {
-  const TextQRGeneratorScreen({super.key});
+class EmailQRGeneratorScreen extends StatelessWidget {
+  const EmailQRGeneratorScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +9,7 @@ class TextQRGeneratorScreen extends StatelessWidget {
       backgroundColor: AppColors.bgColor,
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 12.w,vertical: 12.h),
+          padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 12.h),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -58,14 +57,14 @@ class TextQRGeneratorScreen extends StatelessWidget {
                         SizedBox(height: 20.h),
                         Center(
                           child: Image.asset(
-                            AppIcons.textIcon,
+                            AppIcons.emailIcon,
                             height: 50.h,
                             width: 50.w,
                           ),
                         ),
                         SizedBox(height: 20.h),
                         Text(
-                          AppStrings.text,
+                          AppStrings.emailText,
                           style: TextStyle(
                             fontSize: 16.sp,
                             fontFamily: 'Itim',
@@ -73,7 +72,10 @@ class TextQRGeneratorScreen extends StatelessWidget {
                           ),
                         ),
                         SizedBox(height: 8.h),
-                        CustomTextField(hintText: AppStrings.enterTextHint),
+                        CustomTextField(
+                          hintText: AppStrings.enterEmail,
+                          keyboardType: TextInputType.emailAddress,
+                        ),
                         SizedBox(height: 50.h),
                         Center(
                           child: CustomButton(
@@ -82,12 +84,14 @@ class TextQRGeneratorScreen extends StatelessWidget {
                             color: AppColors.primaryColor,
                             borderRadius: BorderRadius.circular(12),
                             onTap: () {},
-                            child: Text(AppStrings.generateQR,style: TextStyle(
-                              fontFamily: 'Itim',
-                              fontSize: 16,
-                              color: AppColors.bgColor
-                            ),),
-
+                            child: Text(
+                              AppStrings.generateQR,
+                              style: TextStyle(
+                                fontFamily: 'Itim',
+                                fontSize: 16,
+                                color: AppColors.bgColor,
+                              ),
+                            ),
                           ),
                         ),
                       ],
