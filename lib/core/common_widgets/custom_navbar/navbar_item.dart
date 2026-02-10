@@ -1,4 +1,3 @@
-
 import '../../../app_barrels.dart';
 
 class NavbarItem extends StatelessWidget {
@@ -17,11 +16,13 @@ class NavbarItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      borderRadius: BorderRadius.circular(12.r),
+    return CustomButton(
       onTap: onTap,
+      borderRadius: BorderRadius.circular(15).r,
+      splashColor: AppColors.whiteGrayColor.withValues(alpha: 0.3),
+      highlightedColor: AppColors.whiteGrayColor.withValues(alpha: 0.3),
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+        padding: EdgeInsets.symmetric(horizontal: 10.w),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -30,9 +31,7 @@ class NavbarItem extends StatelessWidget {
               icon,
               height: 24.h,
               width: 24.w,
-              color: isSelected
-                  ? AppColors.primaryColor
-                  : Colors.grey,
+              color: isSelected ? AppColors.primaryColor : Colors.grey,
             ),
             SizedBox(height: 2.h),
             Text(
@@ -40,9 +39,7 @@ class NavbarItem extends StatelessWidget {
               style: TextStyle(
                 fontSize: 14.sp,
                 fontFamily: 'Itim',
-                color: isSelected
-                    ? AppColors.primaryColor
-                    : Colors.grey,
+                color: isSelected ? AppColors.primaryColor : Colors.grey,
               ),
             ),
           ],
@@ -51,4 +48,3 @@ class NavbarItem extends StatelessWidget {
     );
   }
 }
-

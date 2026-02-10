@@ -5,6 +5,7 @@ class AppStrings {
 
   ///Home Screen Strings
   static const generateText = 'Generate';
+  static const scanText = 'Scan';
   static const scanToolTip = 'Scan QR Code';
   static const historyText = 'History';
 

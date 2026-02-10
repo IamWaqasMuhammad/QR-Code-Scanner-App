@@ -1,5 +1,7 @@
 
 
+import 'package:qr_code_scanner/modules/history/binding/history_binding.dart';
+
 import '../app_barrels.dart';
 
 class AppPages {
@@ -65,6 +67,11 @@ class AppPages {
       name: AppRoutes.generateEmail,
       page: () => EmailQRGeneratorScreen(),
       binding: EmailQRGeneratorBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.history,
+      page: () => HistoryScreen(),
+      binding: HistoryBinding(),
     ),
   ];
 }

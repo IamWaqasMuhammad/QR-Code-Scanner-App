@@ -38,6 +38,7 @@ class HomeScreen extends StatelessWidget {
           tooltip: AppStrings.scanToolTip,
           onPressed:(){
             MobileScanner(
+
             );
           },
           child: Image.asset(AppIcons.scanIcon, height: 40.h, width: 40.w),

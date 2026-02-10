@@ -1,3 +1,6 @@
+import 'package:qr_code_scanner/core/common_widgets/custom_tab_bar/custom_tab_bar.dart';
+import 'package:qr_code_scanner/core/common_widgets/custom_tab_bar/tab_bar_content.dart';
+
 import '../../../app_barrels.dart';
 
 class HistoryScreen extends StatelessWidget {
@@ -6,10 +9,24 @@ class HistoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Center(child: Text('No QR Code Generated!',style: TextStyle(fontSize: 26,fontFamily: 'Itim',color: AppColors.whiteGrayColor),))
+        SizedBox(height: 50.h),
+        Center(
+          child: Text(
+            'Your History!',
+            style: TextStyle(
+              color: AppColors.whiteGrayColor,
+              fontFamily: 'Itim',
+              fontSize: 30.sp,
+            ),
+          ),
+        ),
+        SizedBox(height: 20.h),
+
+        CustomTabBar(),
+        Expanded(child: TabBarContent()),
       ],
     );
   }
