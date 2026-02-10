@@ -45,12 +45,12 @@ class CustomTextField extends StatelessWidget {
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: TextStyle(
-          color: AppColors.whiteGrayColor.withOpacity(0.5),
+          color: AppColors.whiteGrayColor.withValues(alpha: 0.5),
           fontSize: 14.sp,
           fontFamily: 'Itim',
         ),
         filled: true,
-        fillColor: Colors.black.withOpacity(0.3),
+        fillColor: Colors.black.withValues(alpha: 0.3),
         contentPadding: EdgeInsets.symmetric(
           horizontal: 16.w,
           vertical: 14.h,
@@ -58,14 +58,14 @@ class CustomTextField extends StatelessWidget {
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12.r),
           borderSide: BorderSide(
-            color: AppColors.whiteGrayColor.withOpacity(0.3),
+            color: AppColors.whiteGrayColor.withValues(alpha: 0.3),
             width: 1,
           ),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12.r),
           borderSide: BorderSide(
-            color: AppColors.whiteGrayColor.withOpacity(0.3),
+            color: AppColors.whiteGrayColor.withValues(alpha: 0.3),
             width: 1,
           ),
         ),

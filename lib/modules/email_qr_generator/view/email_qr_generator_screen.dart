@@ -23,7 +23,7 @@ class EmailQRGeneratorScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12.r),
                   boxShadow: [
                     BoxShadow(
-                      color: AppColors.blackColor.withOpacity(0.5),
+                      color: AppColors.blackColor.withValues(alpha: 0.5),
                       // Add opacity
                       blurRadius: 12,
                     ),
@@ -42,7 +42,7 @@ class EmailQRGeneratorScreen extends StatelessWidget {
                   height: 335.h,
                   width: 335.h,
                   decoration: BoxDecoration(
-                    color: AppColors.blackColor.withOpacity(0.3),
+                    color: AppColors.blackColor.withValues(alpha: 0.3),
                     borderRadius: BorderRadius.circular(12.r),
                   ),
                   child: Padding(

@@ -25,7 +25,7 @@ class SettingsTile extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(bottom: 8.h),
       decoration: BoxDecoration(
-        color: Colors.black.withOpacity(0.3),
+        color: Colors.black.withValues(alpha: 0.3),
         borderRadius: BorderRadius.circular(12.r),
       ),
       child: ListTile(
@@ -34,7 +34,7 @@ class SettingsTile extends StatelessWidget {
           height: 40.h,
           width: 40.w,
           decoration: BoxDecoration(
-            color: AppColors.primaryColor.withOpacity(0.1),
+            color: AppColors.primaryColor.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(10.r),
           ),
           child: Icon(
@@ -55,7 +55,7 @@ class SettingsTile extends StatelessWidget {
         subtitle: Text(
           subtitle!,
           style: TextStyle(
-            color: AppColors.whiteGrayColor.withOpacity(0.6),
+            color: AppColors.whiteGrayColor.withValues(alpha: 0.6),
             fontSize: 12.sp,
             fontFamily: 'Itim',
           ),
@@ -68,7 +68,7 @@ class SettingsTile extends StatelessWidget {
         )
             : Icon(
           Icons.chevron_right,
-          color: AppColors.whiteGrayColor.withOpacity(0.5),
+          color: AppColors.whiteGrayColor.withValues(alpha: 0.5),
           size: 20.sp,
         ),
       ),

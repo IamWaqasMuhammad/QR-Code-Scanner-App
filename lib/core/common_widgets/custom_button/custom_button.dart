@@ -9,6 +9,8 @@ class CustomButton extends StatelessWidget {
   final Widget child;
   final void Function()? onTap;
   final Color? splashColor, highlightedColor;
+  final EdgeInsetsGeometry? margin;
+  final EdgeInsetsGeometry? padding;
 
   const CustomButton({
     super.key,
@@ -22,6 +24,8 @@ class CustomButton extends StatelessWidget {
     required this.onTap,
     this.splashColor,
     this.highlightedColor,
+    this.margin,
+    this.padding,
   });
 
   @override
@@ -35,12 +39,14 @@ class CustomButton extends StatelessWidget {
       ),
       child: InkWell(
         onTap: onTap,
-        splashColor: splashColor ?? AppColors.primaryColor.withOpacity(0.3),
-        highlightColor: highlightedColor ?? AppColors.primaryColor.withOpacity(0.3),
+        splashColor: splashColor ?? AppColors.primaryColor.withValues(alpha: 0.3),
+        highlightColor: highlightedColor ?? AppColors.primaryColor.withValues(alpha: 0.3),
         borderRadius: borderRadius as BorderRadius?,
         child: Container(
           height: height,
           width: width,
+          margin: margin,
+          padding: padding,
           child: Center(child: child),
         ),
       ),

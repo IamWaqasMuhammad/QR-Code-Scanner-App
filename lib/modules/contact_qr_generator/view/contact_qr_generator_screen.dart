@@ -25,7 +25,7 @@ class ContactQRGeneratorScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12.r),
                   boxShadow: [
                     BoxShadow(
-                      color: AppColors.blackColor.withOpacity(0.5),
+                      color: AppColors.blackColor.withValues(alpha: 0.5),
                       blurRadius: 12,
                     ),
                   ],
@@ -43,7 +43,8 @@ class ContactQRGeneratorScreen extends StatelessWidget {
                   height: 450.h,
                   width: 350.h,
                   decoration: BoxDecoration(
-                    color: AppColors.blackColor.withOpacity(0.3),
+                    color: AppColors.blackColor.withValues(alpha: 0.3),
+
                     borderRadius: BorderRadius.circular(12.r),
                   ),
                   child: Padding(

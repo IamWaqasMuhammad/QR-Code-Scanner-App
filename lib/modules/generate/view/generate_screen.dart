@@ -77,7 +77,7 @@ class GenerateScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12.r),
                     boxShadow: [
                       BoxShadow(
-                        color: AppColors.blackColor.withOpacity(0.5),
+                        color: AppColors.blackColor.withValues(alpha: 0.5),
                         blurRadius: 12,
                       ),
                     ],
@@ -97,7 +97,7 @@ class GenerateScreen extends StatelessWidget {
               style: TextStyle(
                 fontFamily: 'Itim',
                 fontSize: 18.sp,
-                color: AppColors.whiteGrayColor.withOpacity(0.4),
+                color: AppColors.whiteGrayColor.withValues(alpha: 0.4),
               ),
             ),
             SizedBox(height: 20.h),
