@@ -1,16 +1,73 @@
-# qr_code_scanner
+# 📱 QR Code Scanner & Generator App (Flutter)
 
-A new Flutter project.
+A modern, fast, and feature-rich **QR Code Scanner & Generator mobile application** built using **Flutter**, focusing on **clean UI, smooth UX, high performance, and scalable architecture**.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 🚀 Features
 
-A few resources to get you started if this is your first Flutter project:
+### 🔍 Scan
+- Scan **all types of QR codes**
+- Fast and accurate camera scanning
+- Auto-detection & instant results
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### 🛠 Generate QR Codes For
+- 📝 Text
+- 🌐 Website / URL
+- 📧 Email
+- 👤 Contact
+- 📶 WiFi
+- 🐦 Twitter
+- 📸 Instagram
+- 💬 WhatsApp
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### 📜 History
+- Scan history
+- Generate history
+- Quick access to previous QR codes
+
+### 🔔 Notifications
+- Push notifications for:
+    - Successful scan
+    - QR generation completion
+
+### 🔊 Feedback System
+- Beep sound on scan & generate
+- Vibration (haptic feedback)
+
+---
+
+## 🎯 Project Goals
+
+- Clean and modern UI
+- Smooth user experience (UX)
+- High performance
+- Scalable and maintainable code architecture
+- Production-ready Flutter application
+
+---
+
+## 🛠 Tech Stack
+
+- **Flutter**
+- **Dart**
+- Camera API
+- Local Storage
+- Push Notifications
+- QR Processing Libraries
+
+---
+
+## 📸 Screenshots
+
+> Coming soon...
+
+---
+
+## ⚙️ Installation & Setup
+
+```bash
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+flutter pub get
+flutter run
