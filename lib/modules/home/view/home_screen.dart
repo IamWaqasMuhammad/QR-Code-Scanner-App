@@ -37,9 +37,7 @@ class HomeScreen extends StatelessWidget {
           shape: const CircleBorder(),
           tooltip: AppStrings.scanToolTip,
           onPressed:(){
-            MobileScanner(
-
-            );
+            Get.to(ScanScreen());
           },
           child: Image.asset(AppIcons.scanIcon, height: 40.h, width: 40.w),
         ),
