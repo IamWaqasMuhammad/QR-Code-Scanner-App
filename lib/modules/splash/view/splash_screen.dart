@@ -46,20 +46,13 @@ class SplashScreen extends GetView<SplashController> {
             SizedBox(height: 30.h),
             Text(
               AppStrings.appName,
-              style: TextStyle(
-                fontSize: 32.sp,
-                fontWeight: FontWeight.bold,
-                fontFamily: 'Itim',
-                color: AppColors.whiteGrayColor,
-              ),
+              style: AppTextStyles.heading,
             ),
             SizedBox(height: 10.h),
             Text(
               'Scan & Generate Instantly',
-              style: TextStyle(
-                fontSize: 16.sp,
+              style: AppTextStyles.title.copyWith(
                 color: AppColors.whiteGrayColor.withOpacity(0.8),
-                fontFamily: 'Itim',
               ),
             ),
             SizedBox(height: 50.h),
@@ -78,20 +71,13 @@ class SplashScreen extends GetView<SplashController> {
                       children: [
                         TextSpan(
                           text: 'Developed by ',
-                          style: TextStyle(
-                            fontFamily: 'Itim',
-                            fontSize: 14.sp,
+                          style: AppTextStyles.caption.copyWith(
                             color: AppColors.whiteGrayColor.withValues(alpha: 0.5),
                           ),
                         ),
                         TextSpan(
                           text: 'Waqas DevelopeR',
-                          style: TextStyle(
-                            fontFamily: 'Itim',
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.bold,
-                            color: AppColors.whiteGrayColor,
-                          ),
+                          style: AppTextStyles.bodyBold,
                         ),
                       ],
                     ),

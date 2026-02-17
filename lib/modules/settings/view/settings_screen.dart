@@ -16,77 +16,50 @@ class SettingsScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
-                  height: 40.h,
-                  width: 40.w,
-                  child: CustomButton(
-                    color: AppColors.blackColor,
-                    borderRadius: BorderRadius.circular(12.r),
-                    boxShadow: [
-                      BoxShadow(
-                        color: AppColors.blackColor.withValues(alpha: 0.5),
-                        blurRadius: 12,
-                      ),
-                    ],
-                    onTap: () => Get.back(),
-                    child: Icon(
-                      Icons.arrow_back,
-                      color: AppColors.primaryColor,
-                      size: 20.sp,
-                    ),
-                  ),
-                ),
+                const GeneratorBackHeader(),
                 SizedBox(height: 50.h),
                 Text(
                   AppStrings.settingsText,
-                  style: TextStyle(
-                    color: AppColors.primaryColor,
-                    fontFamily: 'Itim',
-                    fontSize: 26.sp,
-                  ),
+                  style: AppTextStyles.subHeading.copyWith(color: AppColors.primaryColor),
                 ),
-                SizedBox(height: 15.h,),
-                Obx(()=>SettingsTile(
+                SizedBox(height: 15.h),
+                Obx(() => SettingsTile(
                   title: AppStrings.pushNotificationText,
                   subtitle: AppStrings.pushNotificationSubtitle,
                   icon: Icons.notifications_outlined,
                   isToggle: true,
                   toggleValue: controller.isPushEnable.value,
                   onToggleChanged: controller.isPushEnabled,
-                ),),
-                Obx(()=>SettingsTile(
+                )),
+                Obx(() => SettingsTile(
                   title: AppStrings.vibrateText,
                   subtitle: AppStrings.vibrateSubTitle,
                   icon: Icons.vibration_outlined,
                   isToggle: true,
                   toggleValue: controller.isVibrate.value,
                   onToggleChanged: controller.isVibrated,
-                ),),
-                SizedBox(height: 5.h,),
-                Obx(()=>SettingsTile(
+                )),
+                SizedBox(height: 5.h),
+                Obx(() => SettingsTile(
                   title: AppStrings.beepText,
                   subtitle: AppStrings.beepSubTitle,
                   icon: Icons.volume_up_outlined,
                   isToggle: true,
                   toggleValue: controller.isBeep.value,
-                  onToggleChanged:controller.isBeeped,
-                ),),
+                  onToggleChanged: controller.isBeeped,
+                )),
                 SizedBox(height: 30.h),
                 Text(
                   AppStrings.supportText,
-                  style: TextStyle(
-                    color: AppColors.primaryColor,
-                    fontFamily: 'Itim',
-                    fontSize: 26.sp,
-                  ),
+                  style: AppTextStyles.subHeading.copyWith(color: AppColors.primaryColor),
                 ),
-                SizedBox(height: 15.h,),
+                SizedBox(height: 15.h),
                 SettingsTile(
                   title: AppStrings.rateUsText,
                   subtitle: AppStrings.rateUsSubtitle,
                   icon: Icons.star_border_outlined,
                 ),
-                SizedBox(height: 5.h,),
+                SizedBox(height: 5.h),
                 SettingsTile(
                   title: AppStrings.shareText,
                   subtitle: AppStrings.shareSubTitle,
@@ -100,13 +73,9 @@ class SettingsScreen extends StatelessWidget {
                 SizedBox(height: 30.h),
                 Text(
                   AppStrings.aboutText,
-                  style: TextStyle(
-                    color: AppColors.primaryColor,
-                    fontFamily: 'Itim',
-                    fontSize: 26.sp,
-                  ),
+                  style: AppTextStyles.subHeading.copyWith(color: AppColors.primaryColor),
                 ),
-                SizedBox(height: 15.h,),
+                SizedBox(height: 15.h),
                 SettingsTile(
                   title: AppStrings.versionText,
                   subtitle: AppStrings.versionNumber,

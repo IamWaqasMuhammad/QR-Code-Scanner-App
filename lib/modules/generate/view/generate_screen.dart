@@ -4,52 +4,12 @@ import '../../../app_barrels.dart';
 class GenerateScreen extends StatelessWidget {
   GenerateScreen({super.key});
 
-  final List<Map<String, dynamic>> platforms = [
-    {
-      "label": AppStrings.text,
-      "icon": AppIcons.textIcon,
-      "route": AppRoutes.generateText
-    },
-    {
-      "label": AppStrings.websiteText,
-      "icon": AppIcons.websiteIcon,
-      "route": AppRoutes.generateWebsite
-    },
-    {
-      "label": AppStrings.contactText,
-      "icon": AppIcons.contactIcon,
-      "route": AppRoutes.generateContact
-    },
-    {
-      "label": AppStrings.whatsappText,
-      "icon": AppIcons.whatsappIcon,
-      "route": AppRoutes.generateWhatsApp
-    },
-    {
-      "label": AppStrings.twitterText,
-      "icon": AppIcons.twitterIcon,
-      "route": AppRoutes.generateTwitter
-    },
-    {
-      "label": AppStrings.instagramText,
-      "icon": AppIcons.instagramIcon,
-      "route": AppRoutes.generateInstagram
-    },
-    {
-      "label": AppStrings.wifiText,
-      "icon": AppIcons.wifiIcon,
-      "route": AppRoutes.generateWifi
-    },
-    {
-      "label": AppStrings.emailText,
-      "icon": AppIcons.emailIcon,
-      "route": AppRoutes.generateEmail
-    },
-  ];
+
 
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.find<GenerateController>();
     return SafeArea(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 12.h),
@@ -104,7 +64,7 @@ class GenerateScreen extends StatelessWidget {
             Expanded(
               child: GridView.builder(
                 shrinkWrap: false,
-                itemCount: platforms.length,
+                itemCount: controller.platforms.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   crossAxisSpacing: 12.w,
@@ -112,7 +72,7 @@ class GenerateScreen extends StatelessWidget {
                   childAspectRatio: 1.3,
                 ),
                 itemBuilder: (context, index) {
-                  final platform = platforms[index];
+                  final platform = controller.platforms[index];
                   return ClipRRect(
                     borderRadius: BorderRadius.circular(18),
                     child: CustomButton(
@@ -132,11 +92,7 @@ class GenerateScreen extends StatelessWidget {
                           SizedBox(height: 8.h),
                           Text(
                             platform['label']!,
-                            style: TextStyle(
-                              color: AppColors.whiteGrayColor,
-                              fontFamily: 'Itim',
-                              fontSize: 16.sp,
-                            ),
+                            style: AppTextStyles.body,
                           ),
                         ],
                       ),
