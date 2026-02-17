@@ -1,10 +1,9 @@
-# Mark web build files as generated (these often contain HTML)
-/build/web/** linguist-generated=true
-
-# Mark generated Dart files
-*.g.dart linguist-generated=true
-*.freezed.dart linguist-generated=true
-*.gr.dart linguist-generated=true
-
-# Force all other Dart files to be recognized
-*.dart linguist-language=Dart linguist-detectable
+*.dart linguist-detectable=true
+*.cpp linguist-detectable=false
+*.make linguist-detectable=false
+*.dart linguist-detectable=true
+*.h linguist-vendored
+*.c linguist-vendored
+*.cpp linguist-vendored
+*.cmake linguist-vendored
+CMakeLists.txt linguist-vendored
