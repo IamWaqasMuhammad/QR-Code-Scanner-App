@@ -4,6 +4,7 @@ class AppRoutes {
   static const generate = '/generate';
   static const settings = '/settings';
   static const history = '/history';
+  static const detail = '/detail';
 
   static const generateText = '/generate/text';
   static const generateWebsite = '/generate/website';

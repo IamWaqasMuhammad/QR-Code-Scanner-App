@@ -11,6 +11,8 @@ class CustomButton extends StatelessWidget {
   final Color? splashColor, highlightedColor;
   final EdgeInsetsGeometry? margin;
   final EdgeInsetsGeometry? padding;
+  final BoxBorder? border;
+
 
   const CustomButton({
     super.key,
@@ -26,6 +28,7 @@ class CustomButton extends StatelessWidget {
     this.highlightedColor,
     this.margin,
     this.padding,
+    this.border,
   });
 
   @override
@@ -36,6 +39,7 @@ class CustomButton extends StatelessWidget {
         shape: boxShape,
         borderRadius: borderRadius,
         boxShadow: boxShadow,
+        border: border,
       ),
       child: InkWell(
         onTap: onTap,

@@ -1,5 +1,7 @@
 
 
+import 'package:qr_code_scanner/modules/detail/binding/qr_detail_binding.dart';
+import 'package:qr_code_scanner/modules/detail/view/qr_detail_screen.dart';
 import 'package:qr_code_scanner/modules/history/binding/history_binding.dart';
 
 import '../app_barrels.dart';
@@ -13,8 +15,8 @@ class AppPages {
     ),
     GetPage(
       name: AppRoutes.scan,
-      page: () => ScanScreen(),
-      binding: ScanBinding(),
+      page: () => QRScanScreen(),
+      binding: QRScanBinding(),
     ),
     GetPage(
       name: AppRoutes.generate,
@@ -72,6 +74,11 @@ class AppPages {
       name: AppRoutes.history,
       page: () => HistoryScreen(),
       binding: HistoryBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.detail,
+      page: () => QrDetailScreen(),
+      binding: QrDetailBinding(),
     ),
   ];
 }
