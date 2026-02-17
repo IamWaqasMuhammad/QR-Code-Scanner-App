@@ -1,0 +1,9 @@
+# Dart files
+*.dart linguist-language=Dart linguist-detectable
+
+# Generated files (optional)
+*.g.dart linguist-generated=true
+*.freezed.dart linguist-generated=true
+
+# Ensure proper line endings
+*.dart text eol=lf
