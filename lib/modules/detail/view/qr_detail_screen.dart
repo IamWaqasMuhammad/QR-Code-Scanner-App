@@ -69,8 +69,7 @@ class QrDetailScreen extends StatelessWidget {
                         horizontal: 12.w,
                         vertical: 12.h,
                       ),
-                      child: Expanded(
-                        child: Column(
+                      child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -234,7 +233,6 @@ class QrDetailScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                  ),
                 ),
               ],
             ),

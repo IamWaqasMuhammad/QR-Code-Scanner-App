@@ -54,7 +54,7 @@ class AppStrings {
   static const String privacyPolicySubTitle = 'Follow our policies that benefits you';
   static const String aboutText = 'About';
   static const String versionText = 'Version';
-  static const String versionNumber = '1.0.0';
+  static const String versionNumber = '1.0.1';
 
 
 

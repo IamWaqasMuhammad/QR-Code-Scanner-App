@@ -28,6 +28,7 @@ class ContactQRGeneratorScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 20.h),
                 GeneratorInputCard(
+                  height: 400.h,
                   icon: AppIcons.contactIcon,
                   title: AppStrings.nameText,
                   buttonLabel: AppStrings.generateQR,

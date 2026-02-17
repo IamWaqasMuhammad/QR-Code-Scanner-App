@@ -2,6 +2,7 @@ import '../../app_barrels.dart';
 
 class GeneratorBackHeader extends StatelessWidget {
   final VoidCallback? onTap;
+
   const GeneratorBackHeader({super.key, this.onTap});
 
   @override
@@ -49,89 +50,111 @@ class QRDisplayWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final detailController = Get.find<QrDetailController>();
-    return Obx(() => AnimatedSwitcher(
-      duration: const Duration(milliseconds: 400),
-      child: qrData.value.isEmpty
-          ? const SizedBox()
-          : Center(
-        key: ValueKey(qrData.value),
-        child: Container(
-          height: 335.h,
-          width: 335.h,
-          decoration: BoxDecoration(
-            color: AppColors.blackColor.withValues(alpha: 0.3),
-            borderRadius: BorderRadius.circular(12.r),
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Screenshot(
-                controller: screenshotController,
-                child: QrImageView(
-                  data: qrData.value,
-                  size: 200,
-                  backgroundColor: AppColors.whiteGrayColor,
-                ),
-              ),
-              SizedBox(height: 10.h),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  CustomButton(
-                    onTap: () => detailController.downloadQr(screenshotController),
-                    height: 35.h,
-                    width: 35.w,
-                    color: AppColors.primaryColor.withValues(alpha: 0.1),
-                    borderRadius: BorderRadius.circular(8.r),
-                    child: Icon(Icons.download, color: AppColors.primaryColor, size: 18.sp),
+    return Obx(
+      () => AnimatedSwitcher(
+        duration: const Duration(milliseconds: 400),
+        child: qrData.value.isEmpty
+            ? const SizedBox()
+            : Center(
+                key: ValueKey(qrData.value),
+                child: Container(
+                  height: 335.h,
+                  width: 335.h,
+                  decoration: BoxDecoration(
+                    color: AppColors.blackColor.withValues(alpha: 0.3),
+                    borderRadius: BorderRadius.circular(12.r),
                   ),
-                  SizedBox(width: 15.w),
-                  CustomButton(
-                    onTap: () => detailController.shareQr(screenshotController, qrData.value),
-                    height: 35.h,
-                    width: 35.w,
-                    color: AppColors.primaryColor.withValues(alpha: 0.1),
-                    borderRadius: BorderRadius.circular(8.r),
-                    child: Icon(Icons.share, color: AppColors.primaryColor, size: 18.sp),
-                  ),
-                ],
-              ),
-              if (onOpenUrl != null) ...[
-                SizedBox(height: 10.h),
-                CustomButton(
-                  onTap: onOpenUrl,
-                  height: 40.h,
-                  width: 140.w,
-                  color: AppColors.primaryColor,
-                  borderRadius: BorderRadius.circular(12.r),
-                  child: Row(
+                  child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(
-                        openUrlIcon ?? Icons.open_in_browser,
-                        color: AppColors.bgColor,
-                        size: 16.sp,
+                      Screenshot(
+                        controller: screenshotController,
+                        child: QrImageView(
+                          data: qrData.value,
+                          size: 200,
+                          backgroundColor: AppColors.whiteGrayColor,
+                        ),
                       ),
-                      SizedBox(width: 6.w),
-                      Text(
-                        openUrlLabel ?? 'Open Link',
-                        style: AppTextStyles.body.copyWith(color: AppColors.bgColor, fontSize: 14.sp),
+                      SizedBox(height: 10.h),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          CustomButton(
+                            onTap: () => detailController.downloadQr(
+                              screenshotController,
+                            ),
+                            height: 35.h,
+                            width: 35.w,
+                            color: AppColors.primaryColor.withValues(
+                              alpha: 0.1,
+                            ),
+                            borderRadius: BorderRadius.circular(8.r),
+                            child: Icon(
+                              Icons.download,
+                              color: AppColors.primaryColor,
+                              size: 18.sp,
+                            ),
+                          ),
+                          SizedBox(width: 15.w),
+                          CustomButton(
+                            onTap: () => detailController.shareQr(
+                              screenshotController,
+                              qrData.value,
+                            ),
+                            height: 35.h,
+                            width: 35.w,
+                            color: AppColors.primaryColor.withValues(
+                              alpha: 0.1,
+                            ),
+                            borderRadius: BorderRadius.circular(8.r),
+                            child: Icon(
+                              Icons.share,
+                              color: AppColors.primaryColor,
+                              size: 18.sp,
+                            ),
+                          ),
+                        ],
                       ),
+                      if (onOpenUrl != null) ...[
+                        SizedBox(height: 10.h),
+                        CustomButton(
+                          onTap: onOpenUrl,
+                          height: 40.h,
+                          width: 140.w,
+                          color: AppColors.primaryColor,
+                          borderRadius: BorderRadius.circular(12.r),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                openUrlIcon ?? Icons.open_in_browser,
+                                color: AppColors.bgColor,
+                                size: 16.sp,
+                              ),
+                              SizedBox(width: 6.w),
+                              Text(
+                                openUrlLabel ?? 'Open Link',
+                                style: AppTextStyles.body.copyWith(
+                                  color: AppColors.bgColor,
+                                  fontSize: 14.sp,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
                     ],
                   ),
                 ),
-              ],
-            ],
-          ),
-        ),
+              ),
       ),
-    ),
     );
   }
 }
 
 class GeneratorInputCard extends StatelessWidget {
   final String icon;
+  final double? height;
   final String title;
   final Widget child;
   final String buttonLabel;
@@ -144,13 +167,14 @@ class GeneratorInputCard extends StatelessWidget {
     required this.child,
     required this.buttonLabel,
     required this.onTap,
+    this.height,
   });
 
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        height: 335.h,
+        height: height ?? 335.h,
         width: 335.h,
         decoration: BoxDecoration(
           color: AppColors.blackColor.withValues(alpha: 0.3),
@@ -180,7 +204,9 @@ class GeneratorInputCard extends StatelessWidget {
                   onTap: onTap,
                   child: Text(
                     buttonLabel,
-                    style: AppTextStyles.body.copyWith(color: AppColors.bgColor),
+                    style: AppTextStyles.body.copyWith(
+                      color: AppColors.bgColor,
+                    ),
                   ),
                 ),
               ),

@@ -1,4 +1,3 @@
-
 import '../../../app_barrels.dart';
 
 class WifiQRGeneratorScreen extends StatelessWidget {
@@ -26,6 +25,7 @@ class WifiQRGeneratorScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 20.h),
                 GeneratorInputCard(
+                  height: 400.h,
                   icon: AppIcons.wifiIcon,
                   title: AppStrings.networkText,
                   buttonLabel: AppStrings.generateQR,
