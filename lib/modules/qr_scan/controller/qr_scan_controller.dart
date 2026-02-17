@@ -1,11 +1,8 @@
-import 'dart:io';
-import 'package:gal/gal.dart';
-import 'package:mobile_scanner/mobile_scanner.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:permission_handler/permission_handler.dart';
+
 import 'package:qr_code_scanner/modules/detail/view/qr_detail_screen.dart';
-import 'package:screenshot/screenshot.dart';
-import 'package:share_plus/share_plus.dart';
+
+import 'package:vibration/vibration.dart';
+import '../../../core/models/history_model.dart';
 
 import '../../../app_barrels.dart';
 
@@ -16,6 +13,7 @@ class QRScanController extends GetxController {
 
   var isLoading = false.obs;
   var isScanCompleted = false.obs;
+  var isFlashOn = false.obs;
   String? code;
 
   void onDetect(BarcodeCapture capture) {
@@ -24,78 +22,61 @@ class QRScanController extends GetxController {
 
       if (code != null && code!.isNotEmpty) {
         isScanCompleted.value = true;
+        
+        /// Save to History
+        final historyController = Get.find<HistoryController>();
+        historyController.addToHistory(HistoryItem(
+          data: code!,
+          type: 'QR Code',
+          dateTime: DateTime.now().toString(),
+          isGenerated: false,
+        ));
+
+        _triggerFeedback();
 
         Get.to(QrDetailScreen(closeScreen: closeScreen, code: code));
       }
     }
   }
 
+  void _triggerFeedback() async {
+    final settingsController = Get.find<SettingsController>();
 
-
-  Future<void> downloadQr() async {
-    try {
-      final hasAccess = await Gal.hasAccess(toAlbum: false);
-      if (!hasAccess) {
-        await Gal.requestAccess(toAlbum: false);
+    if (settingsController.isVibrate.value) {
+      if (await Vibration.hasVibrator()) {
+        Vibration.vibrate();
       }
+    }
 
-      final image = await screenshotController.capture();
-
-      if (image != null) {
-        /// Save to temp file first, then to gallery
-        final directory = await getTemporaryDirectory();
-        final imagePath =
-            '${directory.path}/qr_${DateTime.now().millisecondsSinceEpoch}.png';
-        final file = File(imagePath);
-        await file.writeAsBytes(image);
-
-        await Gal.putImage(imagePath);
-
-        Get.snackbar(
-          "Success",
-          "QR Code saved to gallery",
-          snackPosition: SnackPosition.BOTTOM,
-          backgroundColor: Colors.green,
-          colorText: Colors.white,
-          duration: const Duration(seconds: 2),
-        );
-      }
-    } catch (e) {
+    if (settingsController.isPushEnable.value) {
       Get.snackbar(
-        "Error",
-        "Failed to save: ${e.toString()}",
-        snackPosition: SnackPosition.BOTTOM,
-        backgroundColor: Colors.red,
+        'Scan Successful',
+        'QR Code has been scanned successfully',
+        snackPosition: SnackPosition.TOP,
+        backgroundColor: AppColors.primaryColor.withOpacity(0.8),
         colorText: Colors.white,
-        duration: const Duration(seconds: 3),
+        duration: const Duration(seconds: 2),
       );
     }
   }
 
+  void toggleFlash() {
+    mobileScannerController.toggleTorch();
+    isFlashOn.value = !isFlashOn.value;
+  }
+
+  void switchCamera() {
+    mobileScannerController.switchCamera();
+  }
+
+  Future<void> downloadQr() async {
+    final detailController = Get.find<QrDetailController>();
+    await detailController.downloadQr(screenshotController);
+  }
+
   Future<void> shareQr() async {
-    try {
-      final image = await screenshotController.capture();
-
-      if (image == null) return;
-
-      final directory = await getTemporaryDirectory();
-      final imagePath = '${directory.path}/qr_code.png';
-      final file = File(imagePath);
-
-      await file.writeAsBytes(image);
-
-      await Share.shareXFiles([
-        XFile(imagePath),
-      ], text: 'Here is Scan QR Code, $code');
-    } catch (e) {
-      Get.snackbar(
-        "Error",
-        "Failed to share: ${e.toString()}",
-        snackPosition: SnackPosition.BOTTOM,
-        backgroundColor: Colors.red,
-        colorText: Colors.white,
-      );
-    }
+    final detailController = Get.find<QrDetailController>();
+    await detailController.shareQr(screenshotController, code);
   }
 
   void closeScreen() {

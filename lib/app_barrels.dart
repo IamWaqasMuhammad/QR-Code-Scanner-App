@@ -53,10 +53,12 @@ export 'package:flutter/services.dart';
 export 'package:qr_code_scanner/modules/qr_scan/controller/qr_scan_controller.dart';
 export 'package:screenshot/screenshot.dart';
 export 'package:qr_flutter/qr_flutter.dart';
-export 'package:firebase_core/firebase_core.dart';
 export 'package:mobile_scanner/mobile_scanner.dart';
 export 'package:qr_code_scanner/modules/history/controller/history_controller.dart';
 export 'package:qr_code_scanner/modules/detail/controller/qr_detail_controller.dart';
+export 'package:qr_code_scanner/modules/splash/controller/splash_controller.dart';
+export 'package:qr_code_scanner/modules/splash/view/splash_screen.dart';
+export 'package:qr_code_scanner/modules/splash/binding/splash_binding.dart';
 
 
 

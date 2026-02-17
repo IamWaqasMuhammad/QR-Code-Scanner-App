@@ -67,7 +67,7 @@ A modern, fast, and feature-rich **QR Code Scanner & Generator mobile applicatio
 ## ⚙️ Installation & Setup
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/IamWaqasMuhammad/QR-Code-Scanner-App.git
+cd QR-Code-Scanner-App
 flutter pub get
 flutter run

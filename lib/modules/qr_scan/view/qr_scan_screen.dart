@@ -30,7 +30,6 @@ class QRScanScreen extends StatelessWidget {
                             boxShadow: [
                               BoxShadow(
                                 color: AppColors.blackColor.withValues(alpha: 0.5),
-                                // Add opacity
                                 blurRadius: 12,
                               ),
                             ],
@@ -43,14 +42,16 @@ class QRScanScreen extends StatelessWidget {
                           ),
                         ),
                         SizedBox(width: 10.w,),
-                        Center(
-                          child: Text(
-                            'Scan your QR code ',
-                            style: TextStyle(
-                              fontSize: 24.sp,
-                              fontFamily: 'Itim',
-                              fontWeight: FontWeight.bold,
-                              color: AppColors.whiteGrayColor,
+                        Expanded(
+                          child: Center(
+                            child: Text(
+                              'Scan your QR code ',
+                              style: TextStyle(
+                                fontSize: 24.sp,
+                                fontFamily: 'Itim',
+                                fontWeight: FontWeight.bold,
+                                color: AppColors.whiteGrayColor,
+                              ),
                             ),
                           ),
                         ),
@@ -95,6 +96,62 @@ class QRScanScreen extends StatelessWidget {
                           ),
                         ),
                       ],
+                    ),
+                    // Flash and Camera Switch buttons
+                    Positioned(
+                      bottom: 20,
+                      left: 0,
+                      right: 0,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          // Flash Toggle Button
+                          SizedBox(
+                            height: 50.h,
+                            width: 50.w,
+                            child: CustomButton(
+                              color: AppColors.blackColor,
+                              borderRadius: BorderRadius.circular(12.r),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: AppColors.blackColor.withValues(alpha: 0.5),
+                                  blurRadius: 12,
+                                ),
+                              ],
+                              onTap: controller.toggleFlash,
+                              child: Obx(() => Icon(
+                                controller.isFlashOn.value 
+                                    ? Icons.flash_on 
+                                    : Icons.flash_off,
+                                color: AppColors.primaryColor,
+                                size: 24.sp,
+                              )),
+                            ),
+                          ),
+                          SizedBox(width: 20.w),
+                          // Camera Switch Button
+                          SizedBox(
+                            height: 50.h,
+                            width: 50.w,
+                            child: CustomButton(
+                              color: AppColors.blackColor,
+                              borderRadius: BorderRadius.circular(12.r),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: AppColors.blackColor.withValues(alpha: 0.5),
+                                  blurRadius: 12,
+                                ),
+                              ],
+                              onTap: controller.switchCamera,
+                              child: Icon(
+                                Icons.cameraswitch,
+                                color: AppColors.primaryColor,
+                                size: 24.sp,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),

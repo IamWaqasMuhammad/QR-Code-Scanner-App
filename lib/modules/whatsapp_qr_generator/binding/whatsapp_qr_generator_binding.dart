@@ -5,6 +5,6 @@ class WhatsAppQRGeneratorBinding extends Bindings{
   @override
   void dependencies() {
     // TODO: implement dependencies
-    Get.lazyPut<WhatsAppQRGeneratorController>(()=>WhatsAppQRGeneratorController());
+    Get.lazyPut<WhatsappQRGeneratorController>(()=>WhatsappQRGeneratorController());
   }
 }

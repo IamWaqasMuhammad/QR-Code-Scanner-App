@@ -1,4 +1,3 @@
-import 'package:qr_code_scanner/modules/history/controller/history_controller.dart';
 import 'package:qr_code_scanner/modules/history/view/generate_history_tab.dart';
 import 'package:qr_code_scanner/modules/history/view/scan_history_tab.dart';
 

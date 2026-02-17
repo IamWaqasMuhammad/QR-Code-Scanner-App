@@ -25,7 +25,6 @@ class SettingsScreen extends StatelessWidget {
                     boxShadow: [
                       BoxShadow(
                         color: AppColors.blackColor.withValues(alpha: 0.5),
-                        // Add opacity
                         blurRadius: 12,
                       ),
                     ],

@@ -10,7 +10,8 @@ class QrDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.find<QRScanController>();
+    final scanController = Get.find<QRScanController>();
+    final detailController = Get.find<QrDetailController>();
     return Scaffold(
       backgroundColor: AppColors.bgColor,
       body: SafeArea(
@@ -105,7 +106,7 @@ class QrDetailScreen extends StatelessWidget {
                             SizedBox(height: 20.h),
                             Center(
                               child: Screenshot(
-                                controller: controller.screenshotController,
+                                controller: scanController.screenshotController,
                                 child: QrImageView(
                                   data: code.toString(),
                                   size: 200,
@@ -148,7 +149,7 @@ class QrDetailScreen extends StatelessWidget {
                                 SizedBox(width: 5.w),
                                 Center(
                                   child: CustomButton(
-                                    onTap: controller.downloadQr,
+                                    onTap: scanController.downloadQr,
                                     height: 50.h,
                                     width: 170.w,
                                     border: Border.all(
@@ -175,7 +176,7 @@ class QrDetailScreen extends StatelessWidget {
                             SizedBox(height: 10.h),
                             Center(
                               child: CustomButton(
-                                onTap: controller.shareQr,
+                                onTap: () => detailController.shareQr(scanController.screenshotController, code),
                                 height: 50.h,
                                 width: 170.w,
                                 border: Border.all(
@@ -197,6 +198,38 @@ class QrDetailScreen extends StatelessWidget {
                                 ),
                               ),
                             ),
+                            // Open Link button - only show if code is a valid URL
+                            if (detailController.isValidUrl(code)) ...[
+                              SizedBox(height: 10.h),
+                              Center(
+                                child: CustomButton(
+                                  onTap: () => detailController.openUrl(code),
+                                  height: 50.h,
+                                  width: 170.w,
+                                  color: AppColors.primaryColor,
+                                  borderRadius: BorderRadius.circular(12.r),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Icon(
+                                        Icons.open_in_browser,
+                                        color: AppColors.bgColor,
+                                        size: 20.sp,
+                                      ),
+                                      SizedBox(width: 8.w),
+                                      Text(
+                                        'Open Link',
+                                        style: TextStyle(
+                                          fontSize: 18.sp,
+                                          fontFamily: 'Itim',
+                                          color: AppColors.bgColor,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
                           ],
                         ),
                       ),

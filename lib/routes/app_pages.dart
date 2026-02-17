@@ -6,8 +6,16 @@ import 'package:qr_code_scanner/modules/history/binding/history_binding.dart';
 
 import '../app_barrels.dart';
 
+import 'package:qr_code_scanner/modules/splash/binding/splash_binding.dart';
+import 'package:qr_code_scanner/modules/splash/view/splash_screen.dart';
+
 class AppPages {
   static final pages = [
+    GetPage(
+      name: AppRoutes.splash,
+      page: () => SplashScreen(),
+      binding: SplashBinding(),
+    ),
     GetPage(
       name: AppRoutes.home,
       page: () => HomeScreen(),

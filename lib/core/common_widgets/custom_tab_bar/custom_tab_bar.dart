@@ -1,4 +1,3 @@
-import 'package:qr_code_scanner/modules/history/controller/history_controller.dart';
 
 import '../../../app_barrels.dart';
 

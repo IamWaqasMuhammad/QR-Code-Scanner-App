@@ -1,4 +1,3 @@
-import 'package:qr_code_scanner/modules/detail/view/qr_detail_screen.dart';
 
 import '../../../app_barrels.dart';
 
@@ -8,6 +7,7 @@ class TextQRGeneratorScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.find<TextQRGeneratorController>();
+    final detailController = Get.find<QrDetailController>();
     return Scaffold(
       backgroundColor: AppColors.bgColor,
       body: SafeArea(
@@ -53,12 +53,70 @@ class TextQRGeneratorScreen extends StatelessWidget {
                         color: AppColors.blackColor.withValues(alpha: 0.3),
                         borderRadius: BorderRadius.circular(12.r),
                       ),
-                      child: Center(
-                        child: QrImageView(
-                          data: controller.qrData.value,
-                          size: 220,
-                          backgroundColor: AppColors.whiteGrayColor,
-                        ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Screenshot(
+                            controller: controller.screenshotController,
+                            child: QrImageView(
+                              data: controller.qrData.value,
+                              size: 200,
+                              backgroundColor: AppColors.whiteGrayColor,
+                            ),
+                          ),
+                          SizedBox(height: 10.h),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              CustomButton(
+                                onTap: () => detailController.downloadQr(controller.screenshotController),
+                                height: 35.h,
+                                width: 35.w,
+                                color: AppColors.primaryColor.withValues(alpha: 0.1),
+                                borderRadius: BorderRadius.circular(8.r),
+                                child: Icon(Icons.download, color: AppColors.primaryColor, size: 18.sp),
+                              ),
+                              SizedBox(width: 15.w),
+                              CustomButton(
+                                onTap: () => detailController.shareQr(controller.screenshotController, controller.qrData.value),
+                                height: 35.h,
+                                width: 35.w,
+                                color: AppColors.primaryColor.withValues(alpha: 0.1),
+                                borderRadius: BorderRadius.circular(8.r),
+                                child: Icon(Icons.share, color: AppColors.primaryColor, size: 18.sp),
+                              ),
+                            ],
+                          ),
+                          if (detailController.isValidUrl(controller.qrData.value)) ...[
+                            SizedBox(height: 10.h),
+                            CustomButton(
+                              onTap: () => detailController.openUrl(controller.qrData.value),
+                              height: 40.h,
+                              width: 140.w,
+                              color: AppColors.primaryColor,
+                              borderRadius: BorderRadius.circular(12.r),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(
+                                    Icons.open_in_browser,
+                                    color: AppColors.bgColor,
+                                    size: 16.sp,
+                                  ),
+                                  SizedBox(width: 6.w),
+                                  Text(
+                                    'Open Link',
+                                    style: TextStyle(
+                                      fontSize: 14.sp,
+                                      fontFamily: 'Itim',
+                                      color: AppColors.bgColor,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ],
                       ),
                     ),
                   ),

@@ -1,12 +1,12 @@
+
+import 'package:get_storage/get_storage.dart';
 import 'package:qr_code_scanner/app_barrels.dart';
 import 'package:qr_code_scanner/routes/app_pages.dart';
-import 'firebase_options.dart';
-
+import 'package:qr_code_scanner/core/bindings/initial_binding.dart';
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await GetStorage.init();
   runApp(const MyApp());
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
 }
 
 class MyApp extends StatelessWidget {
@@ -22,8 +22,8 @@ class MyApp extends StatelessWidget {
         return GetMaterialApp(
           title: AppStrings.appName,
           debugShowCheckedModeBanner: false,
-          initialBinding: HomeBinding(),
-          initialRoute: AppRoutes.home,
+          initialBinding: InitialBinding(),
+          initialRoute: AppRoutes.splash,
           getPages: AppPages.pages,
           builder: (context, widget) {
             return widget!;
