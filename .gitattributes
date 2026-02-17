@@ -1,9 +1,29 @@
-*.dart linguist-detectable=true
+# Force Dart detection
+*.dart linguist-detectable=true linguist-language=Dart
+
+# Hide HTML completely
+*.html linguist-detectable=false linguist-language=HTML
+
+# Hide C/C++ files
 *.cpp linguist-detectable=false
+*.c linguist-detectable=false
+*.h linguist-detectable=false
+
+# Hide make files
 *.make linguist-detectable=false
-*.dart linguist-detectable=true
-*.h linguist-vendored
-*.c linguist-vendored
-*.cpp linguist-vendored
-*.cmake linguist-vendored
-CMakeLists.txt linguist-vendored
+
+# Mark vendored code
+*.h linguist-vendored=true
+*.c linguist-vendored=true
+*.cpp linguist-vendored=true
+*.cmake linguist-vendored=true
+CMakeLists.txt linguist-vendored=true
+
+# Optional: Hide other common files that might confuse GitHub
+*.js linguist-detectable=false
+*.css linguist-detectable=false
+*.json linguist-detectable=false
+*.xml linguist-detectable=false
+*.gradle linguist-detectable=false
+*.kt linguist-detectable=false
+*.kts linguist-detectable=false
