@@ -1,5 +1,4 @@
 import '../../../app_barrels.dart';
-import 'package:mobile_scanner/mobile_scanner.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 

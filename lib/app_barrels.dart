@@ -7,7 +7,7 @@ export 'package:qr_code_scanner/core/constants/app_colors/app_colors.dart';
 export 'package:qr_code_scanner/core/constants/app_icons/app_icons.dart';
 export 'package:qr_code_scanner/core/common_widgets/custom_navbar/custom_navbar.dart';
 export 'package:qr_code_scanner/modules/home/controller/home_controller.dart';
-export 'package:qr_code_scanner/modules/scan/view/qr_scan_screen.dart';
+export 'package:qr_code_scanner/modules/qr_scan/view/qr_scan_screen.dart';
 export 'package:qr_code_scanner/modules/contact_qr_generator/controller/contact_qr_generator_controller.dart';
 export 'package:qr_code_scanner/core/common_widgets/custom_button/custom_button.dart';
 export 'package:qr_code_scanner/core/common_widgets/custom_text_field/custom_text_field.dart';
@@ -29,7 +29,7 @@ export 'package:qr_code_scanner/app_barrels.dart';
 export 'package:qr_code_scanner/modules/generate/binding/generate_binding.dart';
 export 'package:qr_code_scanner/modules/home/binding/home_binding.dart';
 export 'package:qr_code_scanner/modules/home/view/home_screen.dart';
-export 'package:qr_code_scanner/modules/scan/binding/qr_scan_binding.dart';
+export 'package:qr_code_scanner/modules/qr_scan/binding/qr_scan_binding.dart';
 export 'package:qr_code_scanner/modules/settings/binding/settings_binding.dart';
 export 'package:qr_code_scanner/modules/settings/view/settings_screen.dart';
 export 'package:qr_code_scanner/modules/text_qr_generator/binding/text_qr_generator_binding.dart';
@@ -49,5 +49,14 @@ export '../modules/whatsapp_qr_generator/view/whatsapp_qr_generator_screen.dart'
 export '../modules/wifi_qr_generator/binding/wifi_qr_generator_binding.dart';
 export '../modules/wifi_qr_generator/view/wifi_qr_generator_screen.dart';
 export 'package:qr_code_scanner/core/common_widgets/custom_navbar/navbar_item.dart';
+export 'package:flutter/services.dart';
+export 'package:qr_code_scanner/modules/qr_scan/controller/qr_scan_controller.dart';
+export 'package:screenshot/screenshot.dart';
+export 'package:qr_flutter/qr_flutter.dart';
+export 'package:firebase_core/firebase_core.dart';
+export 'package:mobile_scanner/mobile_scanner.dart';
+export 'package:qr_code_scanner/modules/history/controller/history_controller.dart';
+export 'package:qr_code_scanner/modules/detail/controller/qr_detail_controller.dart';
+
 
 

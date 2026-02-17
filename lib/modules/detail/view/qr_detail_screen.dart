@@ -1,10 +1,6 @@
-import 'package:flutter/services.dart';
-import 'package:qr_code_scanner/modules/detail/controller/qr_detail_controller.dart';
-import 'package:qr_code_scanner/modules/scan/controller/qr_scan_controller.dart';
-import 'package:screenshot/screenshot.dart';
-import 'package:share_plus/share_plus.dart';
+
 import '../../../app_barrels.dart';
-import 'package:qr_flutter/qr_flutter.dart';
+
 
 class QrDetailScreen extends StatelessWidget {
   final String? code;

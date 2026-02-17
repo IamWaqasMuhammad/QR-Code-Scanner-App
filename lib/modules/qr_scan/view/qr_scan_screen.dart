@@ -1,5 +1,3 @@
-import 'package:mobile_scanner/mobile_scanner.dart';
-import 'package:qr_code_scanner/modules/scan/controller/qr_scan_controller.dart';
 
 import '../../../app_barrels.dart';
 
