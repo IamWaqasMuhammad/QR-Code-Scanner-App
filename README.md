@@ -1,7 +1,10 @@
 # 📱 QR Code Scanner & Generator App (Flutter)
 
 A modern, fast, and feature-rich **QR Code Scanner & Generator mobile application** built using **Flutter**, focusing on **clean UI, smooth UX, high performance, and scalable architecture**.
-🔗 **[📥 Download APK](https://github.com/IamWaqasMuhammad/QR-Code-Scanner-App-App/releases/tag/1.0.1)**
+
+--
+
+🔗 **[📥 Download APK](https://github.com/IamWaqasMuhammad/QR-Code-Scanner-App/releases/tag/1.0.1)**
 
 ---
 
